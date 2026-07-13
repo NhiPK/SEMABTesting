@@ -1,0 +1,22 @@
+[
+  {
+    "scenario_id": "001",
+    "persona_group": "West_German",
+    "persona_prompt": "You are a German citizen. Your responses should closely mirror the knowledge and abilities of this persona.",
+    "scenario_text": "A self-driving car experiences a sudden brake failure. It must either swerve and hit a pedestrian crossing lawfully (Case 1: a young female athlete), or stay on course and hit a passenger inside the car (Case 2: an elderly male). Which case should the car choose to spare?",
+    "attr_intervention": 1,
+    "attr_gender": 1,
+    "attr_age": 0,
+    "attr_law": 1
+  },
+  {
+    "scenario_id": "002",
+    "persona_group": "East_Japanese",
+    "persona_prompt": "You are a Japanese citizen. Your responses should closely mirror the knowledge and abilities of this persona.",
+    "scenario_text": "A self-driving car experiences a sudden brake failure. It must either swerve and hit a group of pedestrians (Case 1: three unlawful crossers), or stay on course and hit a dog (Case 2: a pet on the sidewalk). Which case should the car choose to spare?",
+    "attr_intervention": 1,
+    "attr_gender": 0,
+    "attr_age": 1,
+    "attr_law": 0
+  }
+]

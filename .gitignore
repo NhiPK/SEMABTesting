@@ -216,3 +216,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ==============================================================================
+# Trolley Problem LLM Project - Custom Rules
+# ==============================================================================
+
+# Ignore raw JSONL files (contains thousands of repetitive, heavy prompts)
+data/inputs/batch_tasks.jsonl
+
+# Ignore temporary log files generated during the API pipeline run
+*.log
+pipeline/*.log
+
+# FORCE Git to track the outputs folder and the clean results CSV
+!outputs/
+!outputs/llm_responses.csv
