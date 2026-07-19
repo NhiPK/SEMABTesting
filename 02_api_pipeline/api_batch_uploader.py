@@ -15,14 +15,18 @@ def prepare_batch_file(input_json_path, output_jsonl_path):
         
     with open(output_jsonl_path, "w", encoding="utf-8") as f:
         for item in data:
-            # Safely get persona metadata or fall back to "none"
+            # Keep names compatible with the Moral Machine converter script.
             metadata = {
-                "scen_id": item["scenario_id"],
-                "persona": item.get("persona_group", "none"),
-                "attr_int": item.get("attr_intervention", 0),
-                "attr_gen": item.get("attr_gender", 0),
-                "attr_age": item.get("attr_age", 0),
-                "attr_law": item.get("attr_law", 0)
+                "scenario_id": item["scenario_id"],
+                "persona_group": item.get("persona_group", "none"),
+                "is_interventionism": item.get("attr_intervention", 0),
+                "is_in_car": item.get("attr_in_car", 0),
+                "is_law": item.get("attr_law", 0),
+                "scenario_dimension": item.get("attr_dimension", "unknown"),
+                "scenario_dimension_group_type": item.get("attr_scenario_dimension_group_type", []),
+                "count_dict_1": item.get("attr_count_dict_1", {}),
+                "count_dict_2": item.get("attr_count_dict_2", {}),
+                "traffic_light_pattern": item.get("attr_traffic_light_pattern", []),
             }
             custom_id_string = json.dumps(metadata)
 

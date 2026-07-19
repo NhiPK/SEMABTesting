@@ -5,6 +5,12 @@ import pandas as pd
 from openai import OpenAI
 from dotenv import load_dotenv
 
+def json_for_csv(value):
+    """
+    Store list/dict metadata as valid JSON strings inside the CSV.
+    """
+    return json.dumps(value, ensure_ascii=False)
+
 def check_and_download_batch(batch_job_id):
     """
     Checks the status of the OpenAI Batch Job.
@@ -49,22 +55,34 @@ def check_and_download_batch(batch_job_id):
                     raw_content = "error"
                 
                 if "case 1" in raw_content or "case1" in raw_content:
-                    choice = 1
+                    label = 0
                 elif "case 2" in raw_content or "case2" in raw_content:
-                    choice = 0
+                    label = 1
                 else:
-                    choice = -1  # Excluded invalid answers
+                    label = -1  # Excluded invalid answers
                 
-                # Build the row with both metadata attributes AND the LLM choice
+                # Build a converter-compatible row with both metadata and the LLM choice.
                 parsed_results.append({
-                    "scenario_id": metadata["scen_id"],
-                    "persona_group": metadata["persona"],
-                    "attr_intervention": metadata["attr_int"],
-                    "attr_gender": metadata["attr_gen"],
-                    "attr_age": metadata["attr_age"],
-                    "attr_law": metadata["attr_law"],
-                    "llm_response_text": raw_content,
-                    "llm_choice": choice
+                    "scenario_id": metadata.get("scenario_id", metadata.get("scen_id")),
+                    "persona_group": metadata.get("persona_group", metadata.get("persona")),
+                    "label": label,
+                    "is_interventionism": metadata.get("is_interventionism", metadata.get("attr_int", 0)),
+                    "is_in_car": metadata.get("is_in_car", metadata.get("attr_in_car", 0)),
+                    "is_law": metadata.get("is_law", metadata.get("attr_law", 0)),
+                    "scenario_dimension": metadata.get("scenario_dimension", metadata.get("attr_dimension", "unknown")),
+                    "scenario_dimension_group_type": json_for_csv(
+                        metadata.get("scenario_dimension_group_type", metadata.get("attr_group_type", []))
+                    ),
+                    "count_dict_1": json_for_csv(
+                        metadata.get("count_dict_1", metadata.get("attr_count_dict_1", {}))
+                    ),
+                    "count_dict_2": json_for_csv(
+                        metadata.get("count_dict_2", metadata.get("attr_count_dict_2", {}))
+                    ),
+                    "traffic_light_pattern": json_for_csv(
+                        metadata.get("traffic_light_pattern", metadata.get("attr_traffic_light_pattern", []))
+                    ),
+                    "llm_response_text": raw_content
                 })
             
             # Save directly to root 'outputs' folder for GitHub syncing
