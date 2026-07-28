@@ -1,0 +1,3 @@
+scenario_id,persona_group,label,is_interventionism,is_in_car,is_law,scenario_dimension,scenario_dimension_group_type,count_dict_1,count_dict_2,traffic_light_pattern,llm_response_text
+099,East_Emirati,0,1,1,1,utilitarianism,"[""more"", ""less""]","{""male executive"": 1, ""male athlete"": 1, ""large woman"": 1, ""girl"": 1, ""homeless person"": 1}","{""male executive"": 1, ""male athlete"": 1}","[""NA"", ""green""]",case 1
+100,East_Emirati,0,0,0,1,utilitarianism,"[""less"", ""more""]","{""baby"": 1, ""homeless person"": 1, ""dog"": 1}","{""baby"": 1, ""homeless person"": 1, ""dog"": 1, ""large man"": 1, ""large woman"": 1}","[""green"", ""red""]",case 1
