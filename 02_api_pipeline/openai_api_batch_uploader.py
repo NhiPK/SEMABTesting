@@ -110,10 +110,10 @@ if __name__ == "__main__":
     # Check which input file is available and set the matching output name
     if os.path.exists(input_all):
         chosen_input = input_all
-        output_jsonl_path = "data/inputs/batch_tasks_all.jsonl"
+        output_jsonl_path = "data/inputs/openai_batch_tasks_all.jsonl"
     elif os.path.exists(input_sample):
         chosen_input = input_sample
-        output_jsonl_path = "data/inputs/batch_tasks_sample.jsonl"
+        output_jsonl_path = "data/inputs/openai_batch_tasks_sample.jsonl"
     else:
         chosen_input = None
         output_jsonl_path = None
