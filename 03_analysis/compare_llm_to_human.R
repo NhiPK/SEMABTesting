@@ -3,7 +3,11 @@ ggplot2_available <- requireNamespace("ggplot2", quietly = TRUE)
 ggrepel_available <- requireNamespace("ggrepel", quietly = TRUE)
 
 args <- commandArgs(trailingOnly = TRUE)
-llm_path <- ifelse(length(args) >= 1, args[[1]], "outputs/analysis/main_effects_by_persona.csv")
+llm_path <- ifelse(
+  length(args) >= 1,
+  args[[1]],
+  "outputs/analysis/main_effects_by_persona.csv"
+)
 human_path <- ifelse(length(args) >= 2, args[[2]], "data/CountriesChangePr.csv")
 output_dir <- ifelse(length(args) >= 3, args[[3]], "outputs/analysis")
 
@@ -54,7 +58,9 @@ EFFECT_TO_HUMAN_COLUMNS <- list(
 human_raw <- fread(human_path, check.names = FALSE)
 setnames(human_raw, old = names(human_raw)[1], new = "UserCountry3")
 
-human_effects <- rbindlist(lapply(names(EFFECT_TO_HUMAN_COLUMNS), function(effect) {
+human_effects <- rbindlist(lapply(
+  names(EFFECT_TO_HUMAN_COLUMNS),
+  function(effect) {
   columns <- EFFECT_TO_HUMAN_COLUMNS[[effect]]
   data.table(
     UserCountry3 = human_raw$UserCountry3,
@@ -75,7 +81,7 @@ comparison[, DifferenceFromHuman := Estimate - HumanEstimate]
 comparison[, AbsDifferenceFromHuman := abs(DifferenceFromHuman)]
 comparison[, SquaredDifferenceFromHuman := DifferenceFromHuman^2]
 
-## Hypothesis 1: Personas will differ from the baseline (Neutral) persona in their moral preferences
+## Hypothesis 1: Persona-conditioned AMCEs differ from the Neutral baseline
 
 neutral_effects <- llm_effects[PersonaGroup == "Neutral", .(
   Effect,
@@ -92,7 +98,10 @@ persona_vs_neutral <- merge(
 )
 persona_vs_neutral[, DifferenceFromNeutral := Estimate - NeutralEstimate]
 persona_vs_neutral[, AbsDifferenceFromNeutral := abs(DifferenceFromNeutral)]
-fwrite(persona_vs_neutral, file.path(output_dir, "h1_persona_minus_neutral_amce_by_effect.csv"))
+fwrite(
+  persona_vs_neutral,
+  file.path(output_dir, "h1_persona_minus_neutral_amce_by_effect.csv")
+)
 
 h1_distance_from_baseline <- persona_vs_neutral[
   !is.na(NeutralEstimate),
@@ -105,9 +114,12 @@ h1_distance_from_baseline <- persona_vs_neutral[
   by = .(PersonaGroup, UserCountry3, PersonaCluster, PersonaNationality)
 ]
 setorder(h1_distance_from_baseline, EuclideanDistanceFromNeutral)
-fwrite(h1_distance_from_baseline, file.path(output_dir, "h1_distance_from_neutral_amce_by_persona.csv"))
+fwrite(
+  h1_distance_from_baseline,
+  file.path(output_dir, "h1_distance_from_neutral_amce_by_persona.csv")
+)
 
-## Hypothesis 2: Persona prompts reduce distance to matched human country AMCEs compared with the neutral baseline
+## Hypothesis 2: Persona prompts reduce distance to matched human AMCEs
 
 ## H2-1: By country/region and each Moral Machine dimension
 h2_persona_distance_to_human <- comparison[
@@ -138,18 +150,31 @@ h2_baseline_effect_comparison <- merge(
   by = "Effect",
   all.x = TRUE
 )
-h2_baseline_effect_comparison[, BaselineDifferenceFromHuman := NeutralEstimate - HumanEstimate]
-h2_baseline_effect_comparison[, BaselineAbsDifferenceFromHuman := abs(BaselineDifferenceFromHuman)]
-h2_baseline_effect_comparison[, BaselineSquaredDifferenceFromHuman := BaselineDifferenceFromHuman^2]
-fwrite(h2_baseline_effect_comparison, file.path(output_dir, "h2_neutral_minus_human_amce_by_country_effect.csv"))
+h2_baseline_effect_comparison[
+  , BaselineDifferenceFromHuman := NeutralEstimate - HumanEstimate
+]
+h2_baseline_effect_comparison[
+  , BaselineAbsDifferenceFromHuman := abs(BaselineDifferenceFromHuman)
+]
+h2_baseline_effect_comparison[
+  , BaselineSquaredDifferenceFromHuman := BaselineDifferenceFromHuman^2
+]
+fwrite(
+  h2_baseline_effect_comparison,
+  file.path(output_dir, "h2_neutral_minus_human_amce_by_country_effect.csv")
+)
 
 ## H2-2: Overall distance by country/region across all dimensions
 h2_baseline_distance_to_human <- h2_baseline_effect_comparison[
   !is.na(NeutralEstimate) & !is.na(HumanEstimate),
   .(
-    BaselineEuclideanDistanceToHuman = sqrt(sum(BaselineSquaredDifferenceFromHuman)),
+    BaselineEuclideanDistanceToHuman = sqrt(
+      sum(BaselineSquaredDifferenceFromHuman)
+    ),
     BaselineRMSEToHuman = sqrt(mean(BaselineSquaredDifferenceFromHuman)),
-    BaselineMeanAbsoluteDifferenceToHuman = mean(BaselineAbsDifferenceFromHuman),
+    BaselineMeanAbsoluteDifferenceToHuman = mean(
+      BaselineAbsDifferenceFromHuman
+    ),
     ComparedEffects = .N
   ),
   by = .(PersonaGroup, UserCountry3, PersonaCluster, PersonaNationality)
@@ -158,30 +183,67 @@ h2_baseline_distance_to_human <- h2_baseline_effect_comparison[
 h2_persona_vs_baseline_distance <- merge(
   h2_persona_distance_to_human,
   h2_baseline_distance_to_human,
-  by = c("PersonaGroup", "UserCountry3", "PersonaCluster", "PersonaNationality"),
+  by = c(
+    "PersonaGroup", "UserCountry3", "PersonaCluster", "PersonaNationality"
+  ),
   suffixes = c("Persona", "Baseline")
 )
-h2_persona_vs_baseline_distance[, EuclideanDistanceImprovement := BaselineEuclideanDistanceToHuman - PersonaEuclideanDistanceToHuman]
-h2_persona_vs_baseline_distance[, RMSEImprovement := BaselineRMSEToHuman - PersonaRMSEToHuman]
-h2_persona_vs_baseline_distance[, MeanAbsoluteDifferenceImprovement := BaselineMeanAbsoluteDifferenceToHuman - PersonaMeanAbsoluteDifferenceToHuman]
-h2_persona_vs_baseline_distance[, H2SupportedByEuclidean := PersonaEuclideanDistanceToHuman < BaselineEuclideanDistanceToHuman]
-h2_persona_vs_baseline_distance[, H2SupportedByRMSE := PersonaRMSEToHuman < BaselineRMSEToHuman]
-setorder(h2_persona_vs_baseline_distance, PersonaCluster, -EuclideanDistanceImprovement)
-fwrite(h2_persona_vs_baseline_distance, file.path(output_dir, "h2_persona_vs_baseline_human_distance_by_persona.csv"))
+h2_persona_vs_baseline_distance[
+  , EuclideanDistanceImprovement :=
+    BaselineEuclideanDistanceToHuman - PersonaEuclideanDistanceToHuman
+]
+h2_persona_vs_baseline_distance[
+  , RMSEImprovement := BaselineRMSEToHuman - PersonaRMSEToHuman
+]
+h2_persona_vs_baseline_distance[
+  , MeanAbsoluteDifferenceImprovement :=
+    BaselineMeanAbsoluteDifferenceToHuman - PersonaMeanAbsoluteDifferenceToHuman
+]
+h2_persona_vs_baseline_distance[
+  , H2SupportedByEuclidean :=
+    PersonaEuclideanDistanceToHuman < BaselineEuclideanDistanceToHuman
+]
+h2_persona_vs_baseline_distance[
+  , H2SupportedByRMSE := PersonaRMSEToHuman < BaselineRMSEToHuman
+]
+setorder(
+  h2_persona_vs_baseline_distance,
+  PersonaCluster,
+  -EuclideanDistanceImprovement
+)
+fwrite(
+  h2_persona_vs_baseline_distance,
+  file.path(output_dir, "h2_persona_vs_baseline_human_distance_by_persona.csv")
+)
 
 h2_cluster_summary <- h2_persona_vs_baseline_distance[
   PersonaCluster %in% c("East", "West"),
   .(
-    MeanPersonaEuclideanDistanceToHuman = mean(PersonaEuclideanDistanceToHuman, na.rm = TRUE),
-    MeanBaselineEuclideanDistanceToHuman = mean(BaselineEuclideanDistanceToHuman, na.rm = TRUE),
-    MeanEuclideanDistanceImprovement = mean(EuclideanDistanceImprovement, na.rm = TRUE),
+    MeanPersonaEuclideanDistanceToHuman = mean(
+      PersonaEuclideanDistanceToHuman,
+      na.rm = TRUE
+    ),
+    MeanBaselineEuclideanDistanceToHuman = mean(
+      BaselineEuclideanDistanceToHuman,
+      na.rm = TRUE
+    ),
+    MeanEuclideanDistanceImprovement = mean(
+      EuclideanDistanceImprovement,
+      na.rm = TRUE
+    ),
     SharePersonasImproved = mean(H2SupportedByEuclidean, na.rm = TRUE),
     PersonasCompared = .N
   ),
   by = PersonaCluster
 ]
-h2_cluster_summary[, H2SupportedAtClusterLevel := MeanPersonaEuclideanDistanceToHuman < MeanBaselineEuclideanDistanceToHuman]
-fwrite(h2_cluster_summary, file.path(output_dir, "h2_persona_vs_baseline_human_distance_by_cluster.csv"))
+h2_cluster_summary[
+  , H2SupportedAtClusterLevel :=
+    MeanPersonaEuclideanDistanceToHuman < MeanBaselineEuclideanDistanceToHuman
+]
+fwrite(
+  h2_cluster_summary,
+  file.path(output_dir, "h2_persona_vs_baseline_human_distance_by_cluster.csv")
+)
 
 ## Prepare wide LLM AMCE matrix for PCA and proposal-style descriptive analysis:
 ## rows = country-personas, columns = Moral Machine AMCE dimensions
@@ -190,16 +252,22 @@ preference_matrix <- dcast(
   PersonaGroup + UserCountry3 + PersonaCluster + PersonaNationality ~ Effect,
   value.var = "Estimate"
 )
-fwrite(preference_matrix, file.path(output_dir, "h2_llm_amce_matrix_by_country_persona.csv"))
+fwrite(
+  preference_matrix,
+  file.path(output_dir, "h2_llm_amce_matrix_by_country_persona.csv")
+)
 
-## Hypothesis 3: LLM East-West moral difference distance is smaller than human East-West distance 
+## Hypothesis 3: LLM East-West distance is smaller than human East-West distance
 ## Prepare LLM East and West mean AMCEs for the H3 MDD calculation
 cluster_effects <- llm_effects[PersonaCluster %in% c("East", "West"), .(
   ClusterEstimate = mean(Estimate, na.rm = TRUE),
   Personas = uniqueN(PersonaGroup),
   EffectRows = .N
 ), by = .(PersonaCluster, Effect, ReferenceLevel, ComparedLevel, Contrast)]
-fwrite(cluster_effects, file.path(output_dir, "h3_llm_main_effects_by_persona_cluster.csv"))
+fwrite(
+  cluster_effects,
+  file.path(output_dir, "h3_llm_main_effects_by_persona_cluster.csv")
+)
 
 ## Prepare LLM East-West AMCE differences for the H3 MDD calculation
 cluster_wide <- dcast(
@@ -212,10 +280,13 @@ if (all(c("East", "West") %in% names(cluster_wide))) {
   cluster_wide[, AbsEastMinusWest := abs(EastMinusWest)]
 }
 
-fwrite(cluster_wide, file.path(output_dir, "h3_llm_east_west_amce_differences_by_effect.csv"))
+fwrite(
+  cluster_wide,
+  file.path(output_dir, "h3_llm_east_west_amce_differences_by_effect.csv")
+)
 
-## H3: Compute human East-West AMCE differences using the same persona-country set
-## This keeps the human comparison aligned with the countries/regions used in LLM personas
+## H3: Compute human East-West AMCE differences using the same countries
+## This keeps human comparison aligned with the LLM persona countries.
 human_cluster_effects <- merge(
   persona_country_map[, .(UserCountry3, PersonaCluster)],
   human_effects,
@@ -226,7 +297,10 @@ human_cluster_effects <- merge(
   Countries = uniqueN(UserCountry3),
   EffectRows = .N
 ), by = .(PersonaCluster, Effect)]
-fwrite(human_cluster_effects, file.path(output_dir, "h3_human_main_effects_by_persona_cluster.csv"))
+fwrite(
+  human_cluster_effects,
+  file.path(output_dir, "h3_human_main_effects_by_persona_cluster.csv")
+)
 
 human_cluster_wide <- dcast(
   human_cluster_effects,
@@ -237,17 +311,35 @@ if (all(c("East", "West") %in% names(human_cluster_wide))) {
   human_cluster_wide[, HumanEastMinusWest := East - West]
   human_cluster_wide[, HumanAbsEastMinusWest := abs(HumanEastMinusWest)]
 }
-fwrite(human_cluster_wide, file.path(output_dir, "h3_human_east_west_amce_differences_by_effect.csv"))
+fwrite(
+  human_cluster_wide,
+  file.path(output_dir, "h3_human_east_west_amce_differences_by_effect.csv")
+)
 
-## H3: Test whether LLM East-West moral difference distance is smaller than human East-West distance
+## H3: Test whether LLM East-West MDD is smaller than human East-West MDD
 ## H3 is supported when LlmEastWestMDD < HumanEastWestMDD
 h3_east_west_mdd_by_effect <- merge(
-  cluster_wide[, .(Effect, ReferenceLevel, ComparedLevel, Contrast, LlmEastMinusWest = EastMinusWest, LlmAbsEastMinusWest = AbsEastMinusWest)],
+  cluster_wide[, .(
+    Effect,
+    ReferenceLevel,
+    ComparedLevel,
+    Contrast,
+    LlmEastMinusWest = EastMinusWest,
+    LlmAbsEastMinusWest = AbsEastMinusWest
+  )],
   human_cluster_wide[, .(Effect, HumanEastMinusWest, HumanAbsEastMinusWest)],
   by = "Effect"
 )
-h3_east_west_mdd_by_effect[, AbsDifferenceGap := HumanAbsEastMinusWest - LlmAbsEastMinusWest]
-fwrite(h3_east_west_mdd_by_effect, file.path(output_dir, "h3_llm_vs_human_east_west_amce_differences_by_effect.csv"))
+h3_east_west_mdd_by_effect[
+  , AbsDifferenceGap := HumanAbsEastMinusWest - LlmAbsEastMinusWest
+]
+fwrite(
+  h3_east_west_mdd_by_effect,
+  file.path(
+    output_dir,
+    "h3_llm_vs_human_east_west_amce_differences_by_effect.csv"
+  )
+)
 
 h3_east_west_mdd <- h3_east_west_mdd_by_effect[
   !is.na(LlmEastMinusWest) & !is.na(HumanEastMinusWest),
@@ -259,7 +351,10 @@ h3_east_west_mdd <- h3_east_west_mdd_by_effect[
 ]
 h3_east_west_mdd[, MDDDifference := HumanEastWestMDD - LlmEastWestMDD]
 h3_east_west_mdd[, H3Supported := LlmEastWestMDD < HumanEastWestMDD]
-fwrite(h3_east_west_mdd, file.path(output_dir, "h3_llm_vs_human_east_west_mdd.csv"))
+fwrite(
+  h3_east_west_mdd,
+  file.path(output_dir, "h3_llm_vs_human_east_west_mdd.csv")
+)
 
 
 
@@ -288,7 +383,10 @@ if (ggplot2_available && ggrepel_available && nrow(preference_matrix) >= 2) {
 
     ggplot2::ggsave(
       file.path(output_dir, "h2_llm_persona_pca.png"),
-      plot = ggplot2::ggplot(pca_plot, ggplot2::aes(x = PC1, y = PC2, label = PersonaGroup)) +
+      plot = ggplot2::ggplot(
+        pca_plot,
+        ggplot2::aes(x = PC1, y = PC2, label = PersonaGroup)
+      ) +
         ggplot2::geom_point(size = 3) +
         ggrepel::geom_label_repel(size = 3, max.overlaps = Inf) +
         ggplot2::labs(
@@ -309,10 +407,10 @@ if (ggplot2_available && ggrepel_available && nrow(preference_matrix) >= 2) {
 ## Bar plot of each persona's AMCE distance from the Neutral baseline
 
 ## h2_persona_vs_baseline_human_distance_improvement.png
-## Bar plot where positive values mean persona prompting is closer to matched human AMCEs than Neutral
+## Positive bars mean persona prompting is closer to matched human AMCEs.
 
 ## h2_persona_vs_baseline_human_distance_by_cluster.png
-## Bar plot comparing East/West mean persona-human distance with Neutral-human distance
+## Bar plot comparing East/West persona-human and Neutral-human distances
 
 ## h3_llm_vs_human_east_west_mdd.png
 ## bar plot comparing LLM East-West MDD with human East-West MDD

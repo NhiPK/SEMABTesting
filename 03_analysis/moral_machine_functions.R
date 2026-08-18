@@ -19,11 +19,16 @@ PreprocessProfiles <- function(profiles) {
   return(profiles)
 }
 
-CalcTheoreticalInt <- function(X) {
-  intervention <- as.integer(X[["Intervention"]])
-  barrier <- as.integer(X[["Barrier"]])
-  ped_ped <- as.integer(X[["PedPed"]])
-  crossing_signal <- as.integer(X[["CrossingSignal"]])
+CalcTheoreticalInt <- function(
+  intervention,
+  barrier,
+  ped_ped,
+  crossing_signal
+) {
+  intervention <- as.integer(as.character(intervention))
+  barrier <- as.integer(as.character(barrier))
+  ped_ped <- as.integer(as.character(ped_ped))
+  crossing_signal <- as.integer(as.character(crossing_signal))
 
   if (intervention == 0) {
     if (barrier == 0) {
@@ -56,8 +61,16 @@ CalcTheoreticalInt <- function(X) {
 }
 
 calcWeightsTheoretical <- function(profiles) {
-  p <- apply(profiles, 1, CalcTheoreticalInt)
-  return(1 / p)
+  if (nrow(profiles) == 0) return(numeric(0))
+
+  p <- mapply(
+    CalcTheoreticalInt,
+    profiles[["Intervention"]],
+    profiles[["Barrier"]],
+    profiles[["PedPed"]],
+    profiles[["CrossingSignal"]]
+  )
+  return(1 / as.numeric(p))
 }
 
 fit_effect <- function(data, formula, term_index = 2) {
@@ -124,17 +137,29 @@ GetMainEffectSizes <- function(profiles) {
   dimensions <- list(
     "Gender" = list(levels = c("Male", "Female"), labels = c("Male", "Female")),
     "Fitness" = list(levels = c("Fat", "Fit"), labels = c("Large", "Fit")),
-    "Social Status" = list(levels = c("Low", "High"), labels = c("Low", "High")),
+    "Social Status" = list(
+      levels = c("Low", "High"),
+      labels = c("Low", "High")
+    ),
     "Age" = list(levels = c("Old", "Young"), labels = c("Elderly", "Young")),
-    "No. Characters" = list(levels = c("Less", "More"), labels = c("Less", "More")),
-    "Species" = list(levels = c("Pets", "Hoomans"), labels = c("Pets", "Humans"))
+    "No. Characters" = list(
+      levels = c("Less", "More"),
+      labels = c("Less", "More")
+    ),
+    "Species" = list(
+      levels = c("Pets", "Hoomans"),
+      labels = c("Pets", "Humans")
+    )
   )
 
   for (label in names(dimensions)) {
     scenario_type <- ifelse(label == "No. Characters", "Utilitarian", label)
+    scenario_type <- ifelse(label == "Social Status", "Social Value", scenario_type)
     attribute_levels <- dimensions[[label]][["levels"]]
     contrast_labels <- dimensions[[label]][["labels"]]
-    temp <- profiles[ScenarioType == scenario_type & ScenarioTypeStrict == scenario_type]
+    temp <- profiles[
+      ScenarioType == scenario_type & ScenarioTypeStrict == scenario_type
+    ]
     temp[, AttributeLevel := factor(AttributeLevel, levels = attribute_levels)]
     temp[, BC.weights := calcWeightsTheoretical(.SD)]
     rows[[label]] <- effect_row(
@@ -179,7 +204,11 @@ PlotEffects <- function(effect_data, output_path) {
 
   gg <- ggplot(plot_data, aes(x = Effect, y = Estimate)) +
     geom_col(width = 0.55, fill = "gray75", color = "black", na.rm = TRUE) +
-    geom_errorbar(aes(ymin = Estimate - SE, ymax = Estimate + SE), width = 0.2, na.rm = TRUE) +
+    geom_errorbar(
+      aes(ymin = Estimate - SE, ymax = Estimate + SE),
+      width = 0.2,
+      na.rm = TRUE
+    ) +
     geom_hline(yintercept = 0, color = "black") +
     coord_flip() +
     labs(x = NULL, y = "AMCE / change in save probability") +
