@@ -404,16 +404,20 @@ def save_json(records: list[dict], filepath: str) -> None:
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(records, f, ensure_ascii=False, indent=2)
     print(f"Saved {len(records)} records → {filepath}")
+    
 
 
 all_records = []
 
 for persona_group in PERSONAS.keys():
     records = generate_scenario_batch(
-        nb_scenarios=100,
+        nb_scenarios=500,
         persona_group=persona_group,
         random_seed=123,
     )
     all_records.extend(records)  # extend, not append
+print(list(PERSONAS.keys()))
+print(f"Total persona groups: {len(PERSONAS)}")
+print(f"Total records generated: {len(all_records)}")
 
 save_json(all_records, r"..\data\inputs\scenarios_all.json")
