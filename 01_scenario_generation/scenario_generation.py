@@ -411,7 +411,7 @@ all_records = []
 
 for persona_group in PERSONAS.keys():
     records = generate_scenario_batch(
-        nb_scenarios=500,
+        nb_scenarios=475,
         persona_group=persona_group,
         random_seed=123,
     )
