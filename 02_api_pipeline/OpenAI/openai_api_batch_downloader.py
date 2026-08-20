@@ -88,8 +88,8 @@ def check_and_download_batch(batch_job_id):
             # Save directly to root 'outputs' folder for GitHub syncing
             df = pd.DataFrame(parsed_results)
             os.makedirs("outputs", exist_ok=True)
-            df.to_csv("outputs/llm_responses.csv", index=False)
-            print(f"Cleaned dataset saved successfully to: outputs/llm_responses.csv")
+            df.to_csv("outputs/openai_llm_responses.csv", index=False)
+            print(f"Cleaned dataset saved successfully to: outputs/openai_llm_responses.csv")
             break
             
         elif status in ["failed", "expired", "cancelled"]:
@@ -103,6 +103,5 @@ def check_and_download_batch(batch_job_id):
             time.sleep(60)
 
 if __name__ == "__main__":
-    # Replace with the real Job ID returned by api_batch_uploader.py
-    TEST_BATCH_ID = "batch_replace_this_with_real_id" 
+    TEST_BATCH_ID = "..." 
     check_and_download_batch(TEST_BATCH_ID)

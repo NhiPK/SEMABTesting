@@ -45,9 +45,8 @@ def prepare_batch_requests(input_json_path, output_jsonl_path, mapping_json_path
         requests.append({
             "custom_id": custom_id,
             "params": {
-                "model": "claude-3-5-sonnet-20241022",
+                "model": "claude-sonnet-5",
                 "max_tokens": 5,
-                "temperature": 0.0,
                 "system": system_content,
                 "messages": [
                     {

@@ -44,7 +44,6 @@ def check_and_download_batch(batch_job_id, mapping_json_path):
             if status == "ended":
                 print("\n[SUCCESS] Batch processing completed! Downloading results...")
                 
-                # Fetch results directly from the SDK
                 results = client.messages.batches.results(batch_job_id)
                 parsed_results = []
                 
@@ -55,17 +54,24 @@ def check_and_download_batch(batch_job_id, mapping_json_path):
                     try:
                         if result.result.type == "succeeded":
                             raw_content = result.result.message.content[0].text.strip().lower()
+                        elif result.result.type == "errored":
+                            err = result.result.error
+                            error_msg = getattr(err, 'message', str(err))
+                            error_type = getattr(err, 'type', 'unknown_error')
+                            
+                            raw_content = f"api_error: {error_type}"
+                            print(f"[API ERROR] Scenario {custom_id} failed: {error_msg}")
                         else:
-                            raw_content = "error"
-                    except AttributeError:
-                        raw_content = "error"
+                            raw_content = f"unknown_status: {result.result.type}"
+                    except Exception as e:
+                        raw_content = f"parsing_error: {str(e)}"
                     
                     if "case 1" in raw_content or "case1" in raw_content:
                         label = 0
                     elif "case 2" in raw_content or "case2" in raw_content:
                         label = 1
                     else:
-                        label = -1  # Excluded invalid answers
+                        label = -1 
                     
                     parsed_results.append({
                         "scenario_id": metadata.get("scenario_id", metadata.get("scen_id")),
@@ -110,18 +116,16 @@ def check_and_download_batch(batch_job_id, mapping_json_path):
             break
 
 if __name__ == "__main__":
-    # Replace with the real Job ID returned by sonnet_batch_uploader.py
-    TEST_BATCH_ID = "msgbatch_replace_this_with_real_id" 
+    TEST_BATCH_ID = "..." 
     
     mapping_all = "data/inputs/sonnet_metadata_mapping_all.json"
     mapping_sample = "data/inputs/sonnet_metadata_mapping_sample.json"
     
-    # Choose mapping file based on availability
     if os.path.exists(mapping_all):
         selected_mapping = mapping_all
     elif os.path.exists(mapping_sample):
         selected_mapping = mapping_sample
     else:
-        selected_mapping = mapping_all # default
+        selected_mapping = mapping_all
         
     check_and_download_batch(TEST_BATCH_ID, selected_mapping)
