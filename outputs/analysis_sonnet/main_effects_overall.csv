@@ -1,0 +1,10 @@
+Effect,ReferenceLevel,ComparedLevel,Contrast,Estimate,SE,N,AnalysisGroup
+Intervention,Omission,Commission,Commission - Omission,0.285743612,0.006761978,19950,Overall
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.464612505,0.010203383,7497,Overall
+Law,Illegal,Legal,Legal - Illegal,0.71293916,0.009798016,5124,Overall
+Gender,Male,Female,Female - Male,0.231048007,0.014922894,4158,Overall
+Fitness,Large,Fit,Fit - Large,0.066430962,0.018669973,2772,Overall
+Social Status,Low,High,High - Low,0.656630537,0.013344943,3108,Overall
+Age,Elderly,Young,Young - Elderly,0.072760293,0.017089292,3360,Overall
+No. Characters,Less,More,More - Less,0.726729824,0.012247611,3066,Overall
+Species,Pets,Humans,Humans - Pets,0.836170942,0.009291708,3486,Overall
