@@ -41,7 +41,7 @@ def prepare_batch_file(input_json_path, output_jsonl_path):
                 "url": "/v1/chat/completions",
                 "body": {
                     "model": "gpt-5.6-luna",
-                    "max_completion_tokens": 5,   
+                    "max_completion_tokens": 500,   
                     "messages": [
                         {"role": "system", "content": system_content},
                         {"role": "user", "content": item['scenario_text']}

@@ -6,11 +6,11 @@ import pandas as pd
 def json_for_csv(value):
     return json.dumps(value, ensure_ascii=False)
 
-def parse_and_merge_results(input_directory="outputs", final_csv_path="outputs/openai5_llm_responses.csv"):
+def parse_and_merge_results(input_directory="data/outputs", final_csv_path="outputs/openai5_llm_responses.csv"):
     print(f"[INFO] Scanning '{input_directory}' for downloaded batch result files...")
     
     # Locate all JSONL files ending with '_results.jsonl'
-    search_pattern = os.path.join(input_directory, "*_results.jsonl")
+    search_pattern = os.path.join(input_directory, "openai5_*_results.jsonl")
     result_files = glob.glob(search_pattern)
     
     if not result_files:
@@ -30,7 +30,6 @@ def parse_and_merge_results(input_directory="outputs", final_csv_path="outputs/o
                     
                 data = json.loads(line)
                 
-                # Unpack the compressed metadata from custom_id
                 metadata = json.loads(data.get("custom_id", "{}"))
                 
                 try:
@@ -38,7 +37,6 @@ def parse_and_merge_results(input_directory="outputs", final_csv_path="outputs/o
                 except (KeyError, TypeError):
                     raw_content = "error"
                 
-                # Determine binary classification labels
                 if "case 1" in raw_content or "case1" in raw_content:
                     label = 0
                 elif "case 2" in raw_content or "case2" in raw_content:
@@ -69,12 +67,14 @@ def parse_and_merge_results(input_directory="outputs", final_csv_path="outputs/o
                     "llm_response_text": raw_content
                 })
                 
-    # Transform list of dictionaries into a structured DataFrame
     df = pd.DataFrame(parsed_results)
     
-    # Sort the dataset logically by scenario ID for cleaner analysis
     if "scenario_id" in df.columns:
-        df = df.sort_values(by="scenario_id")
+        try:
+            df['scenario_id_temp'] = pd.to_numeric(df['scenario_id'])
+            df = df.sort_values(by='scenario_id_temp').drop(columns=['scenario_id_temp'])
+        except ValueError:
+            df = df.sort_values(by="scenario_id")
         
     os.makedirs(os.path.dirname(final_csv_path), exist_ok=True)
     df.to_csv(final_csv_path, index=False)
