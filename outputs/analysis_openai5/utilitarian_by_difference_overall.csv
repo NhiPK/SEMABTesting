@@ -1,0 +1,5 @@
+Effect,DiffNumberOFCharacters,ReferenceLevel,ComparedLevel,Contrast,Estimate,SE,N,AnalysisGroup
+No. Characters,1,Less,More,More - Less,0.473191659818123,0.0223627936956854,1554,Overall
+No. Characters,2,Less,More,More - Less,0.736637476637212,0.0233187043145728,840,Overall
+No. Characters,3,Less,More,More - Less,0.810177436754731,0.0267515354384245,504,Overall
+No. Characters,4,Less,More,More - Less,0.999999999999998,1.17714455568834e-16,168,Overall

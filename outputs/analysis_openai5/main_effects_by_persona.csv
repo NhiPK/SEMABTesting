@@ -1,0 +1,190 @@
+Effect,ReferenceLevel,ComparedLevel,Contrast,Estimate,SE,N,PersonaGroup,UserCountry3,PersonaCluster,PersonaNationality
+Intervention,Omission,Commission,Commission - Omission,0.317510876605191,0.0308010908804509,950,East_Chinese,CHN,East,Chinese
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.255301640459517,0.0513245582750881,357,East_Chinese,CHN,East,Chinese
+Law,Illegal,Legal,Legal - Illegal,0.568123393316198,0.0529008041763811,244,East_Chinese,CHN,East,Chinese
+Gender,Male,Female,Female - Male,0.188393881687234,0.0690542159055535,198,East_Chinese,CHN,East,Chinese
+Fitness,Large,Fit,Fit - Large,-0.108115009963558,0.0859943478248199,132,East_Chinese,CHN,East,Chinese
+Social Status,Low,High,High - Low,0.156167004143728,0.0815634893197908,148,East_Chinese,CHN,East,Chinese
+Age,Elderly,Young,Young - Elderly,0.331302522590647,0.0750823651931768,160,East_Chinese,CHN,East,Chinese
+No. Characters,Less,More,More - Less,0.489278038109277,0.072688579235341,146,East_Chinese,CHN,East,Chinese
+Species,Pets,Humans,Humans - Pets,0.83356307979947,0.0430515719773528,166,East_Chinese,CHN,East,Chinese
+Intervention,Omission,Commission,Commission - Omission,0.260072773634943,0.031161733295288,950,East_Emirati,ARE,East,Emirati
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.443367781416517,0.0475862261120067,357,East_Emirati,ARE,East,Emirati
+Law,Illegal,Legal,Legal - Illegal,0.6426735218509,0.049249354751479,244,East_Emirati,ARE,East,Emirati
+Gender,Male,Female,Female - Male,0.281716250876019,0.0662789675159156,198,East_Emirati,ARE,East,Emirati
+Fitness,Large,Fit,Fit - Large,-0.159452177377357,0.0849482560227423,132,East_Emirati,ARE,East,Emirati
+Social Status,Low,High,High - Low,0.12464628917071,0.0810905648313754,148,East_Emirati,ARE,East,Emirati
+Age,Elderly,Young,Young - Elderly,0.282693152518728,0.0758481737270565,160,East_Emirati,ARE,East,Emirati
+No. Characters,Less,More,More - Less,0.794903675856626,0.0504975665547002,146,East_Emirati,ARE,East,Emirati
+Species,Pets,Humans,Humans - Pets,0.877079695858613,0.0375106664583498,166,East_Emirati,ARE,East,Emirati
+Intervention,Omission,Commission,Commission - Omission,0.226917341184596,0.0316913070404427,950,East_HongKonger,HKG,East,HongKonger
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.264743861918763,0.0511874487259948,357,East_HongKonger,HKG,East,HongKonger
+Law,Illegal,Legal,Legal - Illegal,0.773778920308484,0.0407200776155635,244,East_HongKonger,HKG,East,HongKonger
+Gender,Male,Female,Female - Male,0.132583627372186,0.069513827095815,198,East_HongKonger,HKG,East,HongKonger
+Fitness,Large,Fit,Fit - Large,0.0798009209243061,0.0872779506612623,132,East_HongKonger,HKG,East,HongKonger
+Social Status,Low,High,High - Low,0.390615878576955,0.0762826127627284,148,East_HongKonger,HKG,East,HongKonger
+Age,Elderly,Young,Young - Elderly,0.102047059324507,0.0793039686589205,160,East_HongKonger,HKG,East,HongKonger
+No. Characters,Less,More,More - Less,0.752548624496496,0.0549000688648602,146,East_HongKonger,HKG,East,HongKonger
+Species,Pets,Humans,Humans - Pets,0.827338015703903,0.0438720007504408,166,East_HongKonger,HKG,East,HongKonger
+Intervention,Omission,Commission,Commission - Omission,0.277142764615818,0.0310865567194252,950,East_Indian,IND,East,Indian
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.406120675302453,0.0485109204534751,357,East_Indian,IND,East,Indian
+Law,Illegal,Legal,Legal - Illegal,0.668380462724938,0.0478145330896043,244,East_Indian,IND,East,Indian
+Gender,Male,Female,Female - Male,0.202725492955609,0.0681588710276493,198,East_Indian,IND,East,Indian
+Fitness,Large,Fit,Fit - Large,0.0261861002224024,0.0868406742159569,132,East_Indian,IND,East,Indian
+Social Status,Low,High,High - Low,0.281917356890788,0.0785235793641018,148,East_Indian,IND,East,Indian
+Age,Elderly,Young,Young - Elderly,0.245219193809168,0.0766986684107358,160,East_Indian,IND,East,Indian
+No. Characters,Less,More,More - Less,0.704846123496071,0.0587987606716636,146,East_Indian,IND,East,Indian
+Species,Pets,Humans,Humans - Pets,0.847315151096817,0.0414371710534962,166,East_Indian,IND,East,Indian
+Intervention,Omission,Commission,Commission - Omission,0.237955067446849,0.0315356345499165,950,East_Indonesian,IDN,East,Indonesian
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.334167649816502,0.0500301813558036,357,East_Indonesian,IDN,East,Indonesian
+Law,Illegal,Legal,Legal - Illegal,0.609254498714655,0.0509743476158286,244,East_Indonesian,IDN,East,Indonesian
+Gender,Male,Female,Female - Male,0.341630428756383,0.0664892854065464,198,East_Indonesian,IDN,East,Indonesian
+Fitness,Large,Fit,Fit - Large,0.0094097072184382,0.0871154249490929,132,East_Indonesian,IDN,East,Indonesian
+Social Status,Low,High,High - Low,0.367100292352858,0.0765541540398808,148,East_Indonesian,IDN,East,Indonesian
+Age,Elderly,Young,Young - Elderly,0.234177290869961,0.0771547664193637,160,East_Indonesian,IDN,East,Indonesian
+No. Characters,Less,More,More - Less,0.622899786486407,0.0649709891369012,146,East_Indonesian,IDN,East,Indonesian
+Species,Pets,Humans,Humans - Pets,0.74861149711043,0.051783297585923,166,East_Indonesian,IDN,East,Indonesian
+Intervention,Omission,Commission,Commission - Omission,0.302415988388453,0.0308533724086096,950,East_Japanese,JPN,East,Japanese
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.449634714363442,0.0473588882792036,357,East_Japanese,JPN,East,Japanese
+Law,Illegal,Legal,Legal - Illegal,0.696658097686377,0.0461164307557827,244,East_Japanese,JPN,East,Japanese
+Gender,Male,Female,Female - Male,0.213025186880439,0.0686006624032817,198,East_Japanese,JPN,East,Japanese
+Fitness,Large,Fit,Fit - Large,-0.0745831234089451,0.085512193464655,132,East_Japanese,JPN,East,Japanese
+Social Status,Low,High,High - Low,0.28850093080525,0.0790301452923788,148,East_Japanese,JPN,East,Japanese
+Age,Elderly,Young,Young - Elderly,0.261839581147487,0.0762530692739371,160,East_Japanese,JPN,East,Japanese
+No. Characters,Less,More,More - Less,0.578352070145142,0.0678428239187368,146,East_Japanese,JPN,East,Japanese
+Species,Pets,Humans,Humans - Pets,0.807476290622237,0.0460758149580483,166,East_Japanese,JPN,East,Japanese
+Intervention,Omission,Commission,Commission - Omission,0.27736803409958,0.031134577554448,950,East_Korean,KOR,East,Korean
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.415558117100115,0.0482390555439601,357,East_Korean,KOR,East,Korean
+Law,Illegal,Legal,Legal - Illegal,0.676092544987147,0.0473643722946142,244,East_Korean,KOR,East,Korean
+Gender,Male,Female,Female - Male,0.330336957168423,0.0663834816962692,198,East_Korean,KOR,East,Korean
+Fitness,Large,Fit,Fit - Large,-0.0723612139245179,0.0866547970992819,132,East_Korean,KOR,East,Korean
+Social Status,Low,High,High - Low,0.246611329118052,0.0795943304855888,148,East_Korean,KOR,East,Korean
+Age,Elderly,Young,Young - Elderly,0.230762412337517,0.0767965074493589,160,East_Korean,KOR,East,Korean
+No. Characters,Less,More,More - Less,0.622369138792945,0.0650225741867842,146,East_Korean,KOR,East,Korean
+Species,Pets,Humans,Humans - Pets,0.821652022307621,0.0444796798112622,166,East_Korean,KOR,East,Korean
+Intervention,Omission,Commission,Commission - Omission,0.215376606669201,0.031609039568132,950,East_Malaysian,MYS,East,Malaysian
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.418742964935605,0.0482075331312564,357,East_Malaysian,MYS,East,Malaysian
+Law,Illegal,Legal,Legal - Illegal,0.686375321336763,0.046749239542136,244,East_Malaysian,MYS,East,Malaysian
+Gender,Male,Female,Female - Male,0.130435695044504,0.0690538039277787,198,East_Malaysian,MYS,East,Malaysian
+Fitness,Large,Fit,Fit - Large,-0.0688816176043098,0.0857390602017553,132,East_Malaysian,MYS,East,Malaysian
+Social Status,Low,High,High - Low,0.291219095310586,0.0783635959644616,148,East_Malaysian,MYS,East,Malaysian
+Age,Elderly,Young,Young - Elderly,0.0832677728517662,0.0793768420235379,160,East_Malaysian,MYS,East,Malaysian
+No. Characters,Less,More,More - Less,0.656100856580451,0.0623919424758765,146,East_Malaysian,MYS,East,Malaysian
+Species,Pets,Humans,Humans - Pets,0.81837543542486,0.0448702357860895,166,East_Malaysian,MYS,East,Malaysian
+Intervention,Omission,Commission,Commission - Omission,0.279567081027926,0.0309630887539475,950,East_SaudiArabian,SAU,East,SaudiArabian
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.486905718785426,0.0463695560570817,357,East_SaudiArabian,SAU,East,SaudiArabian
+Law,Illegal,Legal,Legal - Illegal,0.645244215938305,0.0491102614127177,244,East_SaudiArabian,SAU,East,SaudiArabian
+Gender,Male,Female,Female - Male,0.198470860129607,0.0682491444665786,198,East_SaudiArabian,SAU,East,SaudiArabian
+Fitness,Large,Fit,Fit - Large,-0.0820085133528151,0.0861424877899947,132,East_SaudiArabian,SAU,East,SaudiArabian
+Social Status,Low,High,High - Low,0.466257545804684,0.0725650125243168,148,East_SaudiArabian,SAU,East,SaudiArabian
+Age,Elderly,Young,Young - Elderly,0.306722661564437,0.074266291922825,160,East_SaudiArabian,SAU,East,SaudiArabian
+No. Characters,Less,More,More - Less,0.738277512812558,0.0555543783710947,146,East_SaudiArabian,SAU,East,SaudiArabian
+Species,Pets,Humans,Humans - Pets,0.820275609826855,0.0446759827020196,166,East_SaudiArabian,SAU,East,SaudiArabian
+Intervention,Omission,Commission,Commission - Omission,0.220273799169616,0.0317200806437569,950,East_Taiwanese,TWN,East,Taiwanese
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.252123962116403,0.0513686231949277,357,East_Taiwanese,TWN,East,Taiwanese
+Law,Illegal,Legal,Legal - Illegal,0.786632390745502,0.0396893662419296,244,East_Taiwanese,TWN,East,Taiwanese
+Gender,Male,Female,Female - Male,0.179094205187549,0.0690986582805296,198,East_Taiwanese,TWN,East,Taiwanese
+Fitness,Large,Fit,Fit - Large,-0.0897041543994721,0.086954467710134,132,East_Taiwanese,TWN,East,Taiwanese
+Social Status,Low,High,High - Low,0.202092199423547,0.0813529254695852,148,East_Taiwanese,TWN,East,Taiwanese
+Age,Elderly,Young,Young - Elderly,0.298300587497275,0.0755347856534886,160,East_Taiwanese,TWN,East,Taiwanese
+No. Characters,Less,More,More - Less,0.609521369860298,0.0662665541480503,146,East_Taiwanese,TWN,East,Taiwanese
+Species,Pets,Humans,Humans - Pets,0.871109272417811,0.0383593590125049,166,East_Taiwanese,TWN,East,Taiwanese
+Intervention,Omission,Commission,Commission - Omission,0.186344012407312,0.0316017869908844,950,Neutral,,Neutral,Neutral
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.538026589257392,0.0447495430231996,357,Neutral,,Neutral,Neutral
+Law,Illegal,Legal,Legal - Illegal,0.750642673521852,0.0424719439085589,244,Neutral,,Neutral,Neutral
+Gender,Male,Female,Female - Male,0.083085439076499,0.0688425988723143,198,Neutral,,Neutral,Neutral
+Fitness,Large,Fit,Fit - Large,-0.15534725330441,0.0842615914118201,132,Neutral,,Neutral,Neutral
+Social Status,Low,High,High - Low,0.321285650785005,0.0773697561081096,148,Neutral,,Neutral,Neutral
+Age,Elderly,Young,Young - Elderly,0.23978344594345,0.0757710248286196,160,Neutral,,Neutral,Neutral
+No. Characters,Less,More,More - Less,0.70020659386598,0.0592708433208309,146,Neutral,,Neutral,Neutral
+Species,Pets,Humans,Humans - Pets,0.857525089299701,0.0401823826237916,166,Neutral,,Neutral,Neutral
+Intervention,Omission,Commission,Commission - Omission,0.291256392849001,0.0310067822006506,950,West_American,USA,West,American
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.385281350796092,0.0489753962923717,357,West_American,USA,West,American
+Law,Illegal,Legal,Legal - Illegal,0.688946015424166,0.0465927222632182,244,West_American,USA,West,American
+Gender,Male,Female,Female - Male,0.3183336018146,0.0659220906388424,198,West_American,USA,West,American
+Fitness,Large,Fit,Fit - Large,-0.0201232248996108,0.0866301055261215,132,West_American,USA,West,American
+Social Status,Low,High,High - Low,0.343402694861913,0.077563226448667,148,West_American,USA,West,American
+Age,Elderly,Young,Young - Elderly,0.327437015014074,0.0747916802244698,160,West_American,USA,West,American
+No. Characters,Less,More,More - Less,0.5949125427204,0.067051754966339,146,West_American,USA,West,American
+Species,Pets,Humans,Humans - Pets,0.788188361829061,0.0480526198710869,166,West_American,USA,West,American
+Intervention,Omission,Commission,Commission - Omission,0.268205043405307,0.0312078909470068,950,West_Australian,AUS,West,Australian
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.321576427983644,0.0502586925756324,357,West_Australian,AUS,West,Australian
+Law,Illegal,Legal,Legal - Illegal,0.663239074550129,0.048109462394201,244,West_Australian,AUS,West,Australian
+Gender,Male,Female,Female - Male,0.163067737557315,0.068496570572475,198,West_Australian,AUS,West,Australian
+Fitness,Large,Fit,Fit - Large,-0.0909225895348891,0.0867663833598468,132,West_Australian,AUS,West,Australian
+Social Status,Low,High,High - Low,0.209766410780831,0.080697798132201,148,West_Australian,AUS,West,Australian
+Age,Elderly,Young,Young - Elderly,0.283785830752438,0.0762020678760205,160,West_Australian,AUS,West,Australian
+No. Characters,Less,More,More - Less,0.518011308288129,0.0706595387900029,146,West_Australian,AUS,West,Australian
+Species,Pets,Humans,Humans - Pets,0.839239709176183,0.0424681299127609,166,West_Australian,AUS,West,Australian
+Intervention,Omission,Commission,Commission - Omission,0.240152487277679,0.0314806442542881,950,West_Brazilian,BRA,West,Brazilian
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.341126040472581,0.0499036945093107,357,West_Brazilian,BRA,West,Brazilian
+Law,Illegal,Legal,Legal - Illegal,0.658097686375322,0.0484003378850412,244,West_Brazilian,BRA,West,Brazilian
+Gender,Male,Female,Female - Male,0.206242071310124,0.0683767024294238,198,West_Brazilian,BRA,West,Brazilian
+Fitness,Large,Fit,Fit - Large,-0.126905770119148,0.0863420698324615,132,West_Brazilian,BRA,West,Brazilian
+Social Status,Low,High,High - Low,0.275699932153788,0.0794276260127424,148,West_Brazilian,BRA,West,Brazilian
+Age,Elderly,Young,Young - Elderly,0.319617012239045,0.075190670962617,160,West_Brazilian,BRA,West,Brazilian
+No. Characters,Less,More,More - Less,0.686601187151262,0.0605217984627825,146,West_Brazilian,BRA,West,Brazilian
+Species,Pets,Humans,Humans - Pets,0.875570342178822,0.0377250632287712,166,West_Brazilian,BRA,West,Brazilian
+Intervention,Omission,Commission,Commission - Omission,0.240800061791697,0.0314797521277889,950,West_British,GBR,West,British
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.281812033435326,0.0509299501975756,357,West_British,GBR,West,British
+Law,Illegal,Legal,Legal - Illegal,0.562982005141389,0.0531274493606275,244,West_British,GBR,West,British
+Gender,Male,Female,Female - Male,0.261609809577956,0.0669869265044363,198,West_British,GBR,West,British
+Fitness,Large,Fit,Fit - Large,-0.0177321275675615,0.0869221756943944,132,West_British,GBR,West,British
+Social Status,Low,High,High - Low,0.270825658434787,0.0799566045128024,148,West_British,GBR,West,British
+Age,Elderly,Young,Young - Elderly,0.314281883532204,0.0753633839789471,160,West_British,GBR,West,British
+No. Characters,Less,More,More - Less,0.709185324655141,0.0583561260890958,146,West_British,GBR,West,British
+Species,Pets,Humans,Humans - Pets,0.771593228236234,0.0496654843294757,166,West_British,GBR,West,British
+Intervention,Omission,Commission,Commission - Omission,0.261527042280447,0.0313586086832592,950,West_Canadian,CAN,West,Canadian
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.296303170747834,0.0507001784051199,357,West_Canadian,CAN,West,Canadian
+Law,Illegal,Legal,Legal - Illegal,0.596401028277635,0.0515986503390895,244,West_Canadian,CAN,West,Canadian
+Gender,Male,Female,Female - Male,0.291517802233521,0.0668631908888414,198,West_Canadian,CAN,West,Canadian
+Fitness,Large,Fit,Fit - Large,0.0323498956623323,0.0868846665971714,132,West_Canadian,CAN,West,Canadian
+Social Status,Low,High,High - Low,0.225723096224003,0.0809043053247643,148,West_Canadian,CAN,West,Canadian
+Age,Elderly,Young,Young - Elderly,0.408731101402049,0.0723988647710932,160,West_Canadian,CAN,West,Canadian
+No. Characters,Less,More,More - Less,0.708352781361807,0.0588420849372214,146,West_Canadian,CAN,West,Canadian
+Species,Pets,Humans,Humans - Pets,0.821454598928301,0.0445359951764666,166,West_Canadian,CAN,West,Canadian
+Intervention,Omission,Commission,Commission - Omission,0.23834310353544,0.0315023982673303,950,West_German,DEU,West,German
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.413021710019526,0.0482656966161648,357,West_German,DEU,West,German
+Law,Illegal,Legal,Legal - Illegal,0.730077120822624,0.043928350643916,244,West_German,DEU,West,German
+Gender,Male,Female,Female - Male,0.0993367360528286,0.0695793096762978,198,West_German,DEU,West,German
+Fitness,Large,Fit,Fit - Large,-0.17212940371023,0.0855336281915792,132,West_German,DEU,West,German
+Social Status,Low,High,High - Low,0.272635962975691,0.0794172589542344,148,West_German,DEU,West,German
+Age,Elderly,Young,Young - Elderly,0.246725658013222,0.076651705410251,160,West_German,DEU,West,German
+No. Characters,Less,More,More - Less,0.574733119783201,0.0684355899379848,146,West_German,DEU,West,German
+Species,Pets,Humans,Humans - Pets,0.827829323343644,0.0438105633993854,166,West_German,DEU,West,German
+Intervention,Omission,Commission,Commission - Omission,0.28202078508915,0.0311328481169075,950,West_Italian,ITA,West,Italian
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.34867312611376,0.0497379260066243,357,West_Italian,ITA,West,Italian
+Law,Illegal,Legal,Legal - Illegal,0.730077120822624,0.043928350643916,244,West_Italian,ITA,West,Italian
+Gender,Male,Female,Female - Male,0.151299330731803,0.0693957907760722,198,West_Italian,ITA,West,Italian
+Fitness,Large,Fit,Fit - Large,-0.0887022949076665,0.085873272493581,132,West_Italian,ITA,West,Italian
+Social Status,Low,High,High - Low,0.445223961263666,0.0743180427766406,148,West_Italian,ITA,West,Italian
+Age,Elderly,Young,Young - Elderly,0.199772098515248,0.0776625985835443,160,West_Italian,ITA,West,Italian
+No. Characters,Less,More,More - Less,0.577435686270125,0.0680175538782615,146,West_Italian,ITA,West,Italian
+Species,Pets,Humans,Humans - Pets,0.704351999432188,0.0554360159895388,166,West_Italian,ITA,West,Italian
+Intervention,Omission,Commission,Commission - Omission,0.281469612233664,0.0310276368516396,950,West_Polish,POL,West,Polish
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.4799305993138,0.0465189525496502,357,West_Polish,POL,West,Polish
+Law,Illegal,Legal,Legal - Illegal,0.724935732647816,0.0442788022493598,244,West_Polish,POL,West,Polish
+Gender,Male,Female,Female - Male,0.207235623252515,0.0685686786797578,198,West_Polish,POL,West,Polish
+Fitness,Large,Fit,Fit - Large,-0.0937647115394433,0.0862152402223435,132,West_Polish,POL,West,Polish
+Social Status,Low,High,High - Low,0.290096556661745,0.078226713300527,148,West_Polish,POL,West,Polish
+Age,Elderly,Young,Young - Elderly,0.0953187877278173,0.0781291979014445,160,West_Polish,POL,West,Polish
+No. Characters,Less,More,More - Less,0.594760258395026,0.0669808497197175,146,West_Polish,POL,West,Polish
+Species,Pets,Humans,Humans - Pets,0.780641593430111,0.0487980218556242,166,West_Polish,POL,West,Polish
+Intervention,Omission,Commission,Commission - Omission,0.306534282395139,0.0309389906874728,950,West_Russian,RUS,West,Russian
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.391543504081433,0.048689479684041,357,West_Russian,RUS,West,Russian
+Law,Illegal,Legal,Legal - Illegal,0.593830334190232,0.051721022716982,244,West_Russian,RUS,West,Russian
+Gender,Male,Female,Female - Male,0.173414540275406,0.0694700104357107,198,West_Russian,RUS,West,Russian
+Fitness,Large,Fit,Fit - Large,-0.0322360690494776,0.0865450981550739,132,West_Russian,RUS,West,Russian
+Social Status,Low,High,High - Low,0.385301869157645,0.0766413333252936,148,West_Russian,RUS,West,Russian
+Age,Elderly,Young,Young - Elderly,0.372471365433821,0.0736713742459547,160,West_Russian,RUS,West,Russian
+No. Characters,Less,More,More - Less,0.56482893850722,0.0688414053223738,146,West_Russian,RUS,West,Russian
+Species,Pets,Humans,Humans - Pets,0.830116595819086,0.043553530002178,166,West_Russian,RUS,West,Russian
+Intervention,Omission,Commission,Commission - Omission,0.332225810574247,0.0306450214064215,950,West_Spanish,ESP,West,Spanish
+Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.257194386446791,0.0512983432437757,357,West_Spanish,ESP,West,Spanish
+Law,Illegal,Legal,Legal - Illegal,0.61953727506427,0.0504596051847065,244,West_Spanish,ESP,West,Spanish
+Gender,Male,Female,Female - Male,0.249816693968509,0.0684795634714401,198,West_Spanish,ESP,West,Spanish
+Fitness,Large,Fit,Fit - Large,0.111734687013432,0.0865477778411603,132,West_Spanish,ESP,West,Spanish
+Social Status,Low,High,High - Low,0.223002286778109,0.0803052891753436,148,West_Spanish,ESP,West,Spanish
+Age,Elderly,Young,Young - Elderly,0.162241552660729,0.0785427566007652,160,West_Spanish,ESP,West,Spanish
+No. Characters,Less,More,More - Less,0.537021255228475,0.0699442442441466,146,West_Spanish,ESP,West,Spanish
+Species,Pets,Humans,Humans - Pets,0.727609280363287,0.0535522098594381,166,West_Spanish,ESP,West,Spanish

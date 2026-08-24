@@ -1,0 +1,82 @@
+Model,PromptCondition,Effect,Estimate
+GPT-4o-mini,Neutral baseline,Intervention,-0.0124350082636987
+GPT-4o-mini,Neutral baseline,Relation to AV,0.361891280224388
+GPT-4o-mini,Neutral baseline,Law,0.287917737789205
+GPT-4o-mini,Neutral baseline,Gender,-0.290061610371726
+GPT-4o-mini,Neutral baseline,Fitness,0.220611961627802
+GPT-4o-mini,Neutral baseline,Social Status,0.510799975612625
+GPT-4o-mini,Neutral baseline,Age,-0.422750889354498
+GPT-4o-mini,Neutral baseline,No. Characters,0.687403589603642
+GPT-4o-mini,Neutral baseline,Species,-0.605139834904954
+Claude-Sonnet,Neutral baseline,Intervention,0.249385302
+Claude-Sonnet,Neutral baseline,Relation to AV,0.612446717
+Claude-Sonnet,Neutral baseline,Law,0.701799486
+Claude-Sonnet,Neutral baseline,Gender,0.142263303
+Claude-Sonnet,Neutral baseline,Fitness,0.111877743
+Claude-Sonnet,Neutral baseline,Social Status,0.688204438
+Claude-Sonnet,Neutral baseline,Age,0.019789529
+Claude-Sonnet,Neutral baseline,No. Characters,0.65630136
+Claude-Sonnet,Neutral baseline,Species,0.899848736
+GPT-5.6,Neutral baseline,Intervention,0.186344012407312
+GPT-5.6,Neutral baseline,Relation to AV,0.538026589257392
+GPT-5.6,Neutral baseline,Law,0.750642673521852
+GPT-5.6,Neutral baseline,Gender,0.083085439076499
+GPT-5.6,Neutral baseline,Fitness,-0.15534725330441
+GPT-5.6,Neutral baseline,Social Status,0.321285650785005
+GPT-5.6,Neutral baseline,Age,0.23978344594345
+GPT-5.6,Neutral baseline,No. Characters,0.70020659386598
+GPT-5.6,Neutral baseline,Species,0.857525089299701
+GPT-4o-mini,East personas,Intervention,0.0196985133295266
+GPT-4o-mini,East personas,Relation to AV,0.585172772817109
+GPT-4o-mini,East personas,Law,0.0616966580976875
+GPT-4o-mini,East personas,Gender,-0.402173236497395
+GPT-4o-mini,East personas,Fitness,0.218600804997078
+GPT-4o-mini,East personas,Social Status,0.485896923607814
+GPT-4o-mini,East personas,Age,-0.489460481957565
+GPT-4o-mini,East personas,No. Characters,0.608716886861668
+GPT-4o-mini,East personas,Species,-0.772117389481241
+GPT-4o-mini,West personas,Intervention,-0.0384015396078536
+GPT-4o-mini,West personas,Relation to AV,0.446814554706811
+GPT-4o-mini,West personas,Law,0.042930591259641
+GPT-4o-mini,West personas,Gender,-0.436017367781473
+GPT-4o-mini,West personas,Fitness,0.197598564068453
+GPT-4o-mini,West personas,Social Status,0.516337405035711
+GPT-4o-mini,West personas,Age,-0.586043159009518
+GPT-4o-mini,West personas,No. Characters,0.656249372651119
+GPT-4o-mini,West personas,Species,-0.80990460556757
+Claude-Sonnet,East personas,Intervention,0.274010426545222
+Claude-Sonnet,East personas,Relation to AV,0.489943990332337
+Claude-Sonnet,East personas,Law,0.719537275064266
+Claude-Sonnet,East personas,Gender,0.238962340762724
+Claude-Sonnet,East personas,Fitness,0.0630230852842096
+Claude-Sonnet,East personas,Social Status,0.626750297238946
+Claude-Sonnet,East personas,Age,0.063519843502408
+Claude-Sonnet,East personas,No. Characters,0.712430210291559
+Claude-Sonnet,East personas,Species,0.829118014148263
+Claude-Sonnet,West personas,Intervention,0.301112628064534
+Claude-Sonnet,West personas,Relation to AV,0.424497597821749
+Claude-Sonnet,West personas,Law,0.707455012853469
+Claude-Sonnet,West personas,Gender,0.232012143540858
+Claude-Sonnet,West personas,Fitness,0.0652941600136188
+Claude-Sonnet,West personas,Social Status,0.683353385840935
+Claude-Sonnet,West personas,Age,0.0872978184344522
+Claude-Sonnet,West personas,No. Characters,0.748072284135044
+Claude-Sonnet,West personas,Species,0.836856091434945
+GPT-5.6,East personas,Intervention,0.261460033284217
+GPT-5.6,East personas,Relation to AV,0.372666708621474
+GPT-5.6,East personas,Law,0.675321336760927
+GPT-5.6,East personas,Gender,0.219841258605795
+GPT-5.6,East personas,Fitness,-0.0539709081665828
+GPT-5.6,East personas,Social Status,0.281512792159716
+GPT-5.6,East personas,Age,0.237633223451149
+GPT-5.6,East personas,No. Characters,0.656909719663627
+GPT-5.6,East personas,Species,0.827279607016862
+GPT-5.6,West personas,Intervention,0.274253462143177
+GPT-5.6,West personas,Relation to AV,0.351646234941079
+GPT-5.6,West personas,Law,0.656812339331621
+GPT-5.6,West personas,Gender,0.212187394677458
+GPT-5.6,West personas,Fitness,-0.0498431608652263
+GPT-5.6,West personas,Social Status,0.294167842929218
+GPT-5.6,West personas,Age,0.273038230529065
+GPT-5.6,West personas,No. Characters,0.606584240236079
+GPT-5.6,West personas,Species,0.796659503273692

@@ -1,0 +1,4 @@
+Model,MeanDistanceFromNeutral,MaxDistanceFromNeutral,PersonaWithMaxDistance,MinDistanceFromNeutral,PersonaWithMinDistance,PersonasCompared
+GPT-4o-mini,0.44251949845,0.559519263,West_German,0.376859138,East_Taiwanese,20
+Claude-Sonnet,0.282783985868443,0.358780202196943,West_Australian,0.20470701027742,East_HongKonger,20
+GPT-5.6,0.344767146293624,0.525022725118278,West_Spanish,0.19580406058453,West_German,20

@@ -1,0 +1,19 @@
+PersonaCluster,Effect,ReferenceLevel,ComparedLevel,Contrast,ClusterEstimate,Personas,EffectRows
+East,Intervention,Omission,Commission,Commission - Omission,0.0196985133295266,10,10
+East,Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.585172772817109,10,10
+East,Law,Illegal,Legal,Legal - Illegal,0.0616966580976875,10,10
+East,Gender,Male,Female,Female - Male,-0.402173236497395,10,10
+East,Fitness,Large,Fit,Fit - Large,0.218600804997078,10,10
+East,Social Status,Low,High,High - Low,0.485896923607814,10,10
+East,Age,Elderly,Young,Young - Elderly,-0.489460481957565,10,10
+East,No. Characters,Less,More,More - Less,0.608716886861668,10,10
+East,Species,Pets,Humans,Humans - Pets,-0.772117389481241,10,10
+West,Intervention,Omission,Commission,Commission - Omission,-0.0384015396078536,10,10
+West,Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.446814554706811,10,10
+West,Law,Illegal,Legal,Legal - Illegal,0.042930591259641,10,10
+West,Gender,Male,Female,Female - Male,-0.436017367781473,10,10
+West,Fitness,Large,Fit,Fit - Large,0.197598564068453,10,10
+West,Social Status,Low,High,High - Low,0.516337405035711,10,10
+West,Age,Elderly,Young,Young - Elderly,-0.586043159009518,10,10
+West,No. Characters,Less,More,More - Less,0.656249372651119,10,10
+West,Species,Pets,Humans,Humans - Pets,-0.80990460556757,10,10
