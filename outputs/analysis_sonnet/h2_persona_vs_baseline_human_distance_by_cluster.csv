@@ -1,3 +1,3 @@
 PersonaCluster,MeanPersonaEuclideanDistanceToHuman,MeanBaselineEuclideanDistanceToHuman,MeanEuclideanDistanceImprovement,SharePersonasImproved,PersonasCompared,H2SupportedAtClusterLevel
-East,0.835136686,0.903704413,0.068567727,1,10,TRUE
-West,0.873718249,0.959507278,0.08578903,0.9,10,TRUE
+East,0.835136686102636,0.903704413864665,0.0685677277620299,1,10,TRUE
+West,0.873718248672841,0.959507278781127,0.0857890301082854,0.9,10,TRUE

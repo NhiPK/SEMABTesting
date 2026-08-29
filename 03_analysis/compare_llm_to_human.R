@@ -373,25 +373,46 @@ if (ggplot2_available && ggrepel_available && nrow(preference_matrix) >= 2) {
   )
   pca_input <- llm_matrix[, effect_columns, drop = FALSE]
   rownames(pca_input) <- row_labels
-  pca_input <- pca_input[complete.cases(pca_input), , drop = FALSE]
+  complete_rows <- complete.cases(pca_input)
+  pca_input <- pca_input[complete_rows, , drop = FALSE]
+  pca_meta <- llm_matrix[complete_rows, , drop = FALSE]
 
   if (nrow(pca_input) >= 2) {
     pca_result <- prcomp(pca_input, center = TRUE, scale. = FALSE)
     explained <- pca_result$sdev^2 / sum(pca_result$sdev^2)
     pca_plot <- as.data.frame(pca_result$x)
     pca_plot$PersonaGroup <- rownames(pca_plot)
+    pca_plot$PersonaCluster <- pca_meta$PersonaCluster
 
     ggplot2::ggsave(
       file.path(output_dir, "h2_llm_persona_pca.png"),
       plot = ggplot2::ggplot(
         pca_plot,
-        ggplot2::aes(x = PC1, y = PC2, label = PersonaGroup)
+        ggplot2::aes(
+          x = PC1,
+          y = PC2,
+          label = PersonaGroup,
+          color = PersonaCluster
+        )
       ) +
         ggplot2::geom_point(size = 3) +
-        ggrepel::geom_label_repel(size = 3, max.overlaps = Inf) +
+        ggrepel::geom_label_repel(
+          size = 3,
+          max.overlaps = Inf,
+          show.legend = FALSE
+        ) +
+        ggplot2::scale_color_manual(
+          values = c("East" = "#1f78b4", "West" = "#e69f00")
+        ) +
+        ggplot2::guides(
+          color = ggplot2::guide_legend(
+            override.aes = list(shape = 15, size = 5)
+          )
+        ) +
         ggplot2::labs(
           x = paste0("PC1 (", round(explained[1] * 100, 1), "%)"),
-          y = paste0("PC2 (", round(explained[2] * 100, 1), "%)")
+          y = paste0("PC2 (", round(explained[2] * 100, 1), "%)"),
+          color = "Persona cluster"
         ) +
         ggplot2::theme_bw(),
       width = 7,

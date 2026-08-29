@@ -4,6 +4,7 @@ ggplot2_available <- requireNamespace("ggplot2", quietly = TRUE)
 if (!ggplot2_available) {
   stop("Package 'ggplot2' is required for plotting.")
 }
+ggrepel_available <- requireNamespace("ggrepel", quietly = TRUE)
 
 args <- commandArgs(trailingOnly = TRUE)
 output_dir <- ifelse(length(args) >= 1, args[[1]], "outputs/model_comparison")
@@ -37,6 +38,12 @@ cluster_effect_files <- list(
   "GPT-4o-mini" = "outputs/analysis_openai4/h3_llm_main_effects_by_persona_cluster.csv",
   "Claude-Sonnet" = "outputs/analysis_sonnet/h3_llm_main_effects_by_persona_cluster.csv",
   "GPT-5.6" = "outputs/analysis_openai5/h3_llm_main_effects_by_persona_cluster.csv"
+)
+
+pca_matrix_files <- list(
+  "GPT-4o-mini" = "outputs/analysis_openai4/h2_llm_amce_matrix_by_country_persona.csv",
+  "Claude-Sonnet" = "outputs/analysis_sonnet/h2_llm_amce_matrix_by_country_persona.csv",
+  "GPT-5.6" = "outputs/analysis_openai5/h2_llm_amce_matrix_by_country_persona.csv"
 )
 
 read_model_h1 <- function(model_name, path) {
@@ -78,6 +85,15 @@ read_main_effects <- function(model_name, path) {
 read_cluster_effects <- function(model_name, path) {
   if (!file.exists(path)) {
     stop("Missing cluster effects file for ", model_name, ": ", path)
+  }
+  data <- fread(path)
+  data[, Model := model_name]
+  data
+}
+
+read_pca_matrix <- function(model_name, path) {
+  if (!file.exists(path)) {
+    stop("Missing PCA matrix file for ", model_name, ": ", path)
   }
   data <- fread(path)
   data[, Model := model_name]
@@ -406,7 +422,3 @@ fwrite(
   heatmap_data,
   file.path(output_dir, "amce_heatmap_neutral_east_west_by_model.csv")
 )
-
-message("Saved H1/H2/H3 and AMCE heatmap model-comparison plots to ", output_dir)
-
-

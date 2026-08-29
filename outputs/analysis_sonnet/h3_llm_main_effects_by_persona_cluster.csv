@@ -1,19 +1,19 @@
 PersonaCluster,Effect,ReferenceLevel,ComparedLevel,Contrast,ClusterEstimate,Personas,EffectRows
-East,Intervention,Omission,Commission,Commission - Omission,0.274010426545222,10,10
-East,Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.489943990332337,10,10
-East,Law,Illegal,Legal,Legal - Illegal,0.719537275064266,10,10
-East,Gender,Male,Female,Female - Male,0.238962340762724,10,10
-East,Fitness,Large,Fit,Fit - Large,0.0630230852842096,10,10
-East,Social Status,Low,High,High - Low,0.626750297238946,10,10
-East,Age,Elderly,Young,Young - Elderly,0.063519843502408,10,10
-East,No. Characters,Less,More,More - Less,0.712430210291559,10,10
-East,Species,Pets,Humans,Humans - Pets,0.829118014148263,10,10
-West,Intervention,Omission,Commission,Commission - Omission,0.301112628064534,10,10
-West,Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.424497597821749,10,10
-West,Law,Illegal,Legal,Legal - Illegal,0.707455012853469,10,10
-West,Gender,Male,Female,Female - Male,0.232012143540858,10,10
-West,Fitness,Large,Fit,Fit - Large,0.0652941600136188,10,10
-West,Social Status,Low,High,High - Low,0.683353385840935,10,10
-West,Age,Elderly,Young,Young - Elderly,0.0872978184344522,10,10
-West,No. Characters,Less,More,More - Less,0.748072284135044,10,10
-West,Species,Pets,Humans,Humans - Pets,0.836856091434945,10,10
+East,Intervention,Omission,Commission,Commission - Omission,0.2740104265,10,10
+East,Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.4899439902,10,10
+East,Law,Illegal,Legal,Legal - Illegal,0.719537275,10,10
+East,Gender,Male,Female,Female - Male,0.2389623407,10,10
+East,Fitness,Large,Fit,Fit - Large,0.0630230853,10,10
+East,Social Status,Low,High,High - Low,0.6267502973,10,10
+East,Age,Elderly,Young,Young - Elderly,0.0635198435,10,10
+East,No. Characters,Less,More,More - Less,0.7124302104,10,10
+East,Species,Pets,Humans,Humans - Pets,0.8291180141,10,10
+West,Intervention,Omission,Commission,Commission - Omission,0.3011126281,10,10
+West,Relation to AV,Passengers,Pedestrians,Pedestrians - Passengers,0.4244975979,10,10
+West,Law,Illegal,Legal,Legal - Illegal,0.7074550128,10,10
+West,Gender,Male,Female,Female - Male,0.2320121436,10,10
+West,Fitness,Large,Fit,Fit - Large,0.06529416,10,10
+West,Social Status,Low,High,High - Low,0.6833533858,10,10
+West,Age,Elderly,Young,Young - Elderly,0.0872978185,10,10
+West,No. Characters,Less,More,More - Less,0.7480722842,10,10
+West,Species,Pets,Humans,Humans - Pets,0.8368560915,10,10
